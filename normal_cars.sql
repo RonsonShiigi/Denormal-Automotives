@@ -20,6 +20,7 @@ INSERT INTO make(make_code, make_title)
     SELECT DISTINCT make_code, make_title
         FROM car_models
         ORDER BY make_code;
+
 -- SELECT * FROM make;
 
 -- creates a table model with model_code and model_title from car_models and puts in alaphabetical order
@@ -38,6 +39,7 @@ INSERT INTO model(model_code, model_title)
 -- SELECT * FROM model;
 
 
+-- creates a table called year_table and orders by year
 
 CREATE TABLE year_TABLE(
     ID SERIAL NOT NULL PRIMARY KEY,
@@ -49,18 +51,21 @@ INSERT INTO year_TABLE(year)
     FROM car_models
     ORDER BY year;
 
+-- SELECT * FROM year_TABLE;
 
+-- SELECT DISTINCT make_title from make;
 
-SELECT * FROM year_TABLE;
+-- SELECT DISTINCT  model_title
+--     FROM car_models
+--     WHERE make_code = 'VOLKS';
 
--- -- makes a new table make and adds in make_code and make_title from car_models
--- SELECT DISTINCT make_code, make_title
--- INTO make
--- FROM car_models;
+-- SELECT DISTINCT make_code, model_code, model_title,year
+-- FROM car_models
+-- WHERE make_code = 'LAM';
 
--- -- inserts primary key into make
--- ALTER TABLE  make
--- ADD COLUMN id SERIAL PRIMARY KEY;
+SELECT COUNT(*) FROM car_models
+    WHERE year
+    BETWEEN 2010 AND 2015;
 
 
 
